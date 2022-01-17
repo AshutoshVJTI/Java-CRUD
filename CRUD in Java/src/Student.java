@@ -66,7 +66,6 @@ public class Student {
 		Connection con = getConnection();
 		try {
 			
-			 
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM student WHERE STUDENT_NO = ?");
 			statement.setInt(1, id);
 			 
@@ -95,12 +94,10 @@ public class Student {
 	
 	public static void readAll() {
 		Connection con = getConnection();
-		try {
-			
+		try {	
 			 
 			PreparedStatement statement = con.prepareStatement("SELECT * FROM student ");
-			
-			 
+					 
 			ResultSet rs = statement.executeQuery();
 			
 			while(rs.next()) {
@@ -122,33 +119,23 @@ public class Student {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		
-		}
-	
-			    
+		}    
 			    
 	public void update() {
 		Connection con = getConnection();
 		try {
-		
-
  
 	PreparedStatement statement = con.prepareStatement("UPDATE student SET STUDENT_NAME= ?, STUDENT_DOB=? , STUDENT_DOJ =? WHERE STUDENT_NO= ?");
 	
 	statement.setString(1, name);
 	statement.setString(2, dob);
-	
 	statement.setString(3, doj);
-	
-	
 	statement.setInt(4,no);
 	 
 	int rowsUpdated = statement.executeUpdate();
 	if (rowsUpdated > 0) {
 	    System.out.println("An existing user  updated successfully!");
 	}
-	
-	
 	}
 	catch(SQLException e) {
 		e.printStackTrace();
@@ -165,8 +152,8 @@ public class Student {
 	
 public static void main(String args[]) throws Exception {
 		
- Student m = new Student( 12, "nivya", "8-7-1999", "3-9-2021" );
- Student k = new Student( 24, "Samprada", "16-09-1999", "6-9-2021" );
+ Student m = new Student( 13, "Ashutosh", "23-05-1999", "12-05-2021" );
+ Student k = new Student( 24, "Samprada", "25-12-1998", "06-09-2021" );
         k.create();
         Student.read(1);
         k.update();
@@ -187,7 +174,6 @@ public static void main(String args[]) throws Exception {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
-	    
 		return con;
 	}
 }
