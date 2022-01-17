@@ -152,14 +152,14 @@ public class Student {
 	
 public static void main(String args[]) throws Exception {
 		
- Student m = new Student( 23, "Manisha", "16-09-1999", "6-9-2021" );
- Student k = new Student( 24, "Samprada", "25-12-1998", "06-09-2021" );
+		Student m = new Student( 22, "Ashutosh", "23-05-1999", "06-09-2021" );
+		Student k = new Student( 23, "Samprada", "25-12-1998", "06-09-2021" );
         k.create();
         k.update();
         m.delete();
         Student.readAll();
         Student.read(1);
-	    }
+        }
 
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/crud";
