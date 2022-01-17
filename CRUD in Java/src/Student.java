@@ -75,7 +75,7 @@ public class Student {
 				System.out.println("STUDENT_NO " + rs.getInt("STUDENT_NO"));
 				System.out.println("STUDENT_NAME " + rs.getString("STUDENT_NAME"));
 				System.out.println("STUDENT_DOB " + rs.getString("STUDENT_DOB"));
-				System.out.println("STUDENT_DOJ" + rs.getString("STUDENT_DOJ"));
+				System.out.println("STUDENT_DOJ " + rs.getString("STUDENT_DOJ"));
 					
 			}
 			}
@@ -152,13 +152,13 @@ public class Student {
 	
 public static void main(String args[]) throws Exception {
 		
- Student m = new Student( 13, "Ashutosh", "23-05-1999", "12-05-2021" );
+ Student m = new Student( 23, "Manisha", "16-09-1999", "6-9-2021" );
  Student k = new Student( 24, "Samprada", "25-12-1998", "06-09-2021" );
         k.create();
-        Student.read(1);
         k.update();
-		Student.readAll();
-		m.delete();
+        m.delete();
+        Student.readAll();
+        Student.read(1);
 	    }
 
 	public static Connection getConnection() {
